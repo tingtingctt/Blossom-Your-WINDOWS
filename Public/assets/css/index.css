@@ -1,0 +1,332 @@
+
+/* #rat {
+    transform: rotate(45deg);
+} */
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+  
+@keyframes rev-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    } 
+}
+
+
+body{
+    background-color: rgb(252, 252, 252);
+    background-image: url("../TT Images/wood.jpg");
+    background-size: cover;
+}
+
+.navbar{
+    background-color:hsla(60, 20%, 99%, 0.9);
+    border-radius: 10px;
+}
+
+.container {
+    margin-top: 45px;
+}
+
+.beige{
+    background-color: hsla(60, 20%, 99%, 0.9);
+    border-radius: 0px 0px 10px 10px;
+}
+
+.padding25{
+    padding:25px;
+}
+
+hr{
+    border-width: 2px;
+    border-color:hsla(9, 78%, 55%, 1);
+    margin-top: 10px;
+}
+
+#rat{
+    height: 70px;
+    position:fixed; 
+    /* animation: run 10s infinite; */
+    top:5px; 
+    left: 0px;
+    z-index:10;
+    display: none;
+}
+
+#fooddiv {
+    position:relative;
+}
+
+#who {
+    position: absolute; 
+    top:50%; 
+    right: 0; 
+    padding: 5px 10px 5px 10px;
+    text-align: center;
+}
+
+#selectavatar {
+    height: 1000px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    display: none;
+}
+
+#selectmickey {
+    height: 120px;
+    position:absolute;
+    top:30%; 
+    left: 20%;
+}
+
+#selectmickey:hover {
+    height: 200px;
+    top: 25%;
+    left: 18%;
+}
+
+#selectrat {
+    height: 120px;
+    position:absolute;
+    top:31%; 
+    left: 34%;
+}
+
+#selectrat:hover {
+    height: 200px;
+    top: 26%;
+    left: 30%;
+}
+
+#selectbob {
+    height: 120px;
+    position:absolute;
+    top:30%; 
+    left: 53%;
+}
+
+#selectbob:hover {
+    height: 200px;
+    top: 25%;
+    left: 48%;
+}
+
+#selectgustav {
+    height: 120px;
+    position:absolute;
+    top:30%; 
+    left: 75%;
+}
+
+#selectgustav:hover {
+    height: 200px;
+    top: 25%;
+    left: 73%;
+}
+
+h2:hover {
+    font-size: 33px;
+    color: hsla(9, 78%, 55%, 1);
+}
+
+@keyframes run {
+    0%   {top: 5px; left: 0px;}
+    25%  {top: 5px; left: 1200px;}
+    50%  {top: 500px; left: 1200px;}
+    75%  {top: 500px; left: 0px;}
+    100% {top: 5px; left: 0px;}
+}
+
+.giphy:hover {
+    height: 220px;
+}
+
+.chef:hover {
+    height: 220px;
+}
+
+.chef {
+    height:200px;
+}
+
+.confetti {
+    position: absolute; 
+    z-index: 1;
+    width: 10px;  
+    top: -10px; 
+    left: 0px;
+    display: none;
+}
+
+.confetti:hover {
+    width: 62px;
+}
+
+
+#gardenbtndiv {
+    position: relative;
+    top: 210px;
+    left: -70px;
+    width: 100px;  
+}
+
+#gardenbtndiv:hover {
+    width: 150px;
+    top: 170px;
+    left: -90px;
+}
+
+#whiteout {
+    position: fixed;
+    height: 99%;
+    width: 99%;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+
+#gardendiv{
+    height: 492px;
+    width: 650px;
+    position: fixed;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#maturity-div {
+    position: fixed;
+    z-index: 3;
+    top: 20%;
+    left: 5%;
+}
+
+#mushroom3 {
+    height: 70px;
+    position:fixed; 
+    top: 30%; 
+    left: 5%;
+}
+
+#mushroom4 {
+    height: 70px;
+    position:fixed; 
+    top: 28%; 
+    left: 32%;
+}
+
+#mushroom1 {
+    height: 70px;
+    position:fixed; 
+    top: 28%; 
+    left: 76%;
+    z-index: 3;
+}
+
+#mushroom2 {
+    height: 70px;
+    position:fixed; 
+    top: 55%; 
+    left: 40%;
+    z-index: 3;
+}
+
+
+/* ----- nav bar -------- */
+
+.dropdown {
+    width: 146px;
+    background-color:   hsla(9, 78%, 55%, 1);
+    border-radius: 10px;
+    color: #fff;
+    padding: 10px;
+    margin: auto 3px auto 6px;
+    margin-bottom: 2px;
+    text-align: center;
+   
+}
+
+.dropdown:hover{
+    background-color: hsla(0, 50%, 49%, 1);
+}
+
+.btn{
+    color: #fff;
+    text-align: center;
+    margin-left: auto;
+}
+
+.btn:hover{
+    font-size: 17px;
+}
+
+
+.nav-link{
+    padding: 10px;
+    text-align: center;
+    width: 25%; 
+    margin: auto 100px auto 100px;
+    font-size: 24px;
+    color: hsla(9, 78%, 55%, 1);
+}
+
+
+.nav-link:hover{
+    color: hsla(0, 50%, 49%, 1);
+    font-size: 25px;
+}
+
+/* Fonts */
+
+h1 {
+    font-family: 'Arima Madurai', cursive;
+    color: red;
+    margin: auto;
+}
+
+h2 {
+    
+    font-family: 'Caveat', cursive;
+}
+
+p {
+    font-family: 'Arima Madurai', cursive;
+}
+
+h3  {
+    font-family: 'Henny Penny', cursive;
+}
+
+button {
+    font-family: 'Arima Madurai', cursive;
+}
+
+a {
+    font-family: 'Henny Penny', cursive;
+}
+
+label {
+    font-family: 'Arima Madurai', cursive;
+}
+
+input {
+    font-family: 'Arima Madurai', cursive;
+}
+
+h3.mealText{
+    font-family: 'Caveat', cursive;
+}

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <link rel="stylesheet" href="assets/css/index.css">
+      <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap" rel="stylesheet">
+      
+      
+
+      <title>Home Chef</title>
+      <link rel="shortcut icon" type="image/png" href="assets/TT Images/food.jpeg">
+   </head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+      <ul class="nav justify-content-center mx-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="recipe.html">Recipes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="grocerylist.html">Grocery</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#" id="settings">Settings</a>
+            </li>
+        </ul>
+      </nav>
+
+  <div class="container">
+    <article class="beige padding25">  
+      <!-- DropDown buttons -->
+      <div class="row" id="weekdays">
+        <!-- monday -->
+        <div class="dropdown" id="monday">
+            <button class="btn dropdown-toggle" type="button" style="color: white" class="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Monday
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" >
+                <label for="breakfast">Breakfast :</label>
+                <input type="text" class="inputMB" id="inputMonB"  value="">
+                <button id="btn-MB" id="monBre">Save</button>
+              </a>
+              <a class="dropdown-item" >
+                <label for="breakfast">   Lunch :</label>
+                <input type="text" class="inputML" id="inputMonL" value="">
+                <button id="btn-ML" id="monLun">Save</button>
+              </a>
+              <a class="dropdown-item" >
+                <label for="breakfast">Dinner :</label>
+                <input type="text" class="inputMD" id="inputMonD" value="">
+                <button id="btn-MD" id="monDin">Save</button>
+              </a>
+            </div>
+          </div>
+          <!-- tuesday -->
+          <div class="dropdown" id="tuesday">
+            <button class="btn dropdown-toggle" type="button"style="color: white" class="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Tuesday
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" >
+                <label for="breakfast">Breakfast :</label>
+                <input type="text" class="inputTB" id="inputTueB"  value="">
+                <button id="btn-TB" id="tueBre">Save</button>
+              </a>
+              <a class="dropdown-item" >
+                <label for="breakfast">   Lunch :</label>
+                <input type="text" class="inputTL" id="inputTueL" value="">
+                <button id="btn-TL" id="tueLun">Save</button>
+              </a>
+              <a class="dropdown-item" >
+                <label for="breakfast">Dinner :</label>
+                <input type="text" class="inputTD" id="inputTueD" value="">
+                <button id="btn-TD" id="tueDin">Save</button>
+              </a>
+            </div>
+          </div>
+          <!-- wednesday -->
+          <div class="dropdown" id="wednesday">
+            <button class="btn dropdown-toggle" type="button" style="color: white" class="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Wednesday
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" >
+                <label for="breakfast">Breakfast :</label>
+                <input type="text" class="inputWB" id="inputWedB" value="">
+                <button id="btn-WB" id="tueBre">Save</button>
+              </a>
+              <a class="dropdown-item" >
+                <label for="breakfast">   Lunch :</label>
+                <input type="text" class="inputWL" id="inputWedL" value="">
+                <button id="btn-WL" id="wedLun">Save</button>
+              </a>
+              <a class="dropdown-item" >
+                <label for="breakfast">Dinner :</label>
+                <input type="text" class="inputWD" id="inputWedD" value="">
+                <button id="btn-WD" id="wedDin">Save</button>
+              </a>
+            </div>
+          </div>
+          <!-- thursday -->
+          <div class="dropdown" id="thursday">
+            <button class="btn dropdown-toggle" type="button" style="color: white" class="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Thursday
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" >
+                <label for="breakfast">Breakfast :</label>
+                <input type="text" class="inputThB" id="inputThuB" value="">
+                <button id="btn-ThB" id="thuBre">Save</button>
+              </a>
+              <a class="dropdown-item" >
+                <label for="breakfast">Lunch :</label>
+                <input type="text" class="inputThL" id="inputThuL" value="">
+                <button id="btn-ThL" id="thuLun">Save</button>
+              </a>
+              <a class="dropdown-item" >
+                <label for="breakfast">Dinner :</label>
+                <input type="text" class="inputThD" id="inputThuD" value="">
+                <button id="btn-ThD" id="thuDin">Save</button>
+              </a>
+            </div>
+          </div>
+          <!-- friday -->
+          <div class="dropdown" id="friday">
+            <button class="btn dropdown-toggle" type="button" style="color: white" class="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Friday
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" >
+                <label for="breakfast">Breakfast :</label>
+                <input type="text" class="inputFB" id="inputFriB" value="">
+                <button id="btn-FB" id="friBre">Save</button>
+              </a>
+              <a class="dropdown-item" >
+                <label for="breakfast">   Lunch :</label>
+                <input type="text" class="inputFL" id="inputFriL" value="">
+                <button id="btn-FL" id="friLun">Save</button>
+              </a>
+              <a class="dropdown-item" >
+                <label for="breakfast">Dinner :</label>
+                <input type="text" class="inputFD" id="inputFriD" value="">
+                <button id="btn-FD" id="friDin">Save</button>
+              </a>
+            </div>
+          </div>
+          <!-- saturday -->
+          <div class="dropdown" id="saturday">
+            <button class="btn dropdown-toggle" type="button" style="color: white" class="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Saturday
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" >
+                <label for="breakfast">Breakfast :</label>
+                <input type="text" class="inputSTB" id="inputSatB" value="">
+                <button id="btn-SaB">Save</button>
+              </a>
+              <a class="dropdown-item" >
+                <label for="breakfast">   Lunch :</label>
+                <input type="text" class="inputSTL" id="inputSatL" value="">
+                <button id="btn-SaL">Save</button>
+              </a>
+              <a class="dropdown-item" >
+                <label for="breakfast">Dinner :</label>
+                <input type="text" class="inputSTD" id="inputSatD" value="">
+                <button id="btn-SaD">Save</button>
+              </a>
+            </div>
+          </div>
+          <!-- sunday -->
+          <div class="dropdown" id="sunday">
+            <button class="btn dropdown-toggle" type="button" style="color: white" class="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Sunday
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" >
+                <label for="breakfast">Breakfast :</label>
+                <input type="text" class="inputSUB" id="inputSunB" value="">
+                <button id="btn-SuB">Save</button>
+              </a>
+              <a class="dropdown-item" >
+                <label for="breakfast">   Lunch :</label>
+                <input type="text" class="inputSUL" id="inputSunL" value="">
+                <button id="btn-SuL">Save</button>
+              </a>
+              <a class="dropdown-item" >
+                <label for="breakfast">Dinner :</label>
+                <input type="text" class="inputSUD" id="inputSunD" value="">
+                <button id="btn-SuD">Save</button>
+              </a>
+            </div>
+          </div>
+    </div>
+
+
+      <br>
+      <br>
+      <br>
+
+
+      <div class="row">
+        <div class="col-md-12">
+            <h3 id="dateEl"  class="mealText">&nbspChoose a Recipe in the recipe page!</h3>
+        </div>
+    </div>
+
+    <hr>
+
+    <br>
+    <br>
+
+    <div class="row">
+      
+      <div class="col-md-1"></div>
+      
+      <!-- Food Giphy images - click to change images -->
+      <div class="col-md-5"> 
+        <h3 id="dishName">Click to change the gif!</h3>
+        <p id = "images"></p>
+      </div>
+
+      <!-- Virtual garden -->
+      <div class="col-md-2">
+        <div id="gardenbtndiv">
+          <img id="gardenbtn" class="d-block w-100" src="assets/TT Images/gardenicon.gif">
+        </div>
+        <div id="whiteout" class="beige">
+          <div id="maturity-div">
+            <h3>Days to mature:</h3>
+            <br>
+          </div>
+
+          <div id="gardendiv" class="beige">
+              <img id="gardenImg" class="d-block w-100" src="assets/TT Images/garden.jpg">
+              <img id="mushroom1" src="assets/TT Images/mushroom.png">
+              <img id="mushroom2" src="assets/TT Images/mushroom.png">
+              <img id="mushroom3" src="assets/TT Images/mushroom.png">
+              <img id="mushroom4" src="assets/TT Images/mushroom.png">
+            </div>
+        </div>
+      </div>
+
+      <!--Chef image - click to change placemats (background images)-->
+      <div class="col-md-3">
+        <h3 id="chefName"> </h3>
+        <img class="chef" src="">
+      </div>
+
+      <div class="col-md-1"></div>
+
+    </div>
+
+    <!-- Pop-out clickables to change placemats (background images) -->
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-5" > </div>
+      <div class="col-md-2"></div>
+      <div class="col-md-3" id="chefImg">
+        <div style="position: relative">
+          
+          <div id="tomato" class="confetti">
+            <img class="d-block w-100" src="assets/TT Images/tomato.png">
+          </div>
+          <div id="lettuce" class="confetti">
+            <img class="d-block w-100" src="assets/TT Images/lettuce.png">
+          </div>
+          <div id="eggplant" class="confetti">
+            <img class="d-block w-100" src="assets/TT Images/eggplant.png">
+          </div>
+          <div id="banana" class="confetti">
+            <img class="d-block w-100" src="assets/TT Images/banana.png">
+          </div>
+          <div id="milk" class="confetti">
+            <img class="d-block w-100" src="assets/TT Images/milk.png">
+          </div>
+          <div id="wine" class="confetti">
+            <img class="d-block w-100" src="assets/TT Images/wine.png">
+          </div>
+          <div id="squid" class="confetti">
+            <img class="d-block w-100" src="assets/TT Images/squid.png">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+
+    <br>
+    <hr>
+
+  <!-- Ingredient list and instructions - linked to local storages  -->
+    
+    <div class="row">
+
+      <div class = "col-12 ingredientsList">
+
+      </div>
+    <div class = "col-12 instructionsList">
+
+    </div>
+  </div>
+
+    </article>
+  </div>
+
+  <!--Modals--> 
+  <div class="row">
+    <div class="col-12">
+
+        <div class="modal fade" id="noTeamModal" tabindex="-1" role="dialog" aria-labelledby="optionsModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Please choose options for this meal!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                         </button>
+                    </div>
+                    <div class="modal-body">
+                        It looks like you don't have a Team! Let's make one so we can get started!
+                        <p><a href = "/newTeam">Make a new Team!</a></p>
+                    </div>
+                </div>
+             </div>
+        </div>
+    </div>
+  </div>
+
+      <!-- Script section -->
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+      <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+     -->
+      <script src = "assets/js/moment.min.js"></script>
+      <script src="assets/js/TTscript.js"></script>
+      <script src="assets/js/Garden.js"></script>
+      <script src="assets/js/index.js"></script>
+      <script src="assets/js/nextMeal.js"></script>
+      
+</body>
+</html>

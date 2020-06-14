@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/recipe.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="assets/TT Images/food.jpeg">
+</head>
+<body>
+
+  <nav class="navbar">
+    <h1>Welcome!</h1>
+  </nav>
+      
+  <div class="container">
+    <article class="beige padding25">  
+      <div class="row justify-content-center">
+        <div class="col-md-6 col-md-offset-3">
+          <h3>New Chef</h3>
+            <form class="signup">
+              <div class="form-group">
+                <label for="teamName">Team Name</label>
+                <input type="text" class="form-control" id="teamname-input" placeholder="What would you like your new team's name to be?">
+              </div>
+              <button type="submit" class="btn btn-default" data-toggle="modal" data-target ="#inviteMembersModal">Make your Team!</button>
+            </form>
+        </div>
+      </div>
+    </article>
+  </div>
+              
+                    
+                    
+
+                    <!--Modals--> 
+
+<!-- <button type="button" class="btn btn-primary graphProgress" data-toggle="modal" data-target="#inviteMembersModal"> -->
+      <!-- View Activity History -->
+<!-- </button> -->
+  <div class="row">
+    <div class="col-12">
+
+        <div class="modal fade" id="inviteMembersModal" tabindex="-1" role="dialog" aria-labelledby="optionsModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Invite Chefs to your team!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                         </button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">
+                            <p>Send them an invite by email</p>
+                        </label>
+                        <input type="text" class="form-control" id="team-email" placeholder="email">
+                      </div>
+                      <button type = "button" class = "btn addEmailForm far fa-plus-square justify-content-center"></button> 
+                    </div>
+                    <button type="submit" class="btn btn-default">Send</button>
+
+                </div>
+             </div>
+        </div>
+    </div>
+  </div>
+                    
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src = "https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>    
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+            <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> -->
+            <!-- <script src = "https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>     -->
+            <script src = "/assets/js/newTeam.js"></script>
+</body>
+</html>
