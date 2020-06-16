@@ -11,10 +11,31 @@
       <link href="https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap" rel="stylesheet">
       
-      
-
       <title>Home Chef</title>
       <link rel="shortcut icon" type="image/png" href="assets/TT Images/food.jpeg">
+
+      <script>
+        function drag_start(event) {
+            var style = window.getComputedStyle(event.target, null);
+            var str = (parseInt(style.getPropertyValue("left")) - event.clientX) + ',' + (parseInt(style.getPropertyValue("top")) - event.clientY) + ',' + event.target.id;
+            event.dataTransfer.setData("Text", str);
+            console.log(str);
+        }
+
+        function drop(event) {
+            var offset = event.dataTransfer.getData("Text").split(',');
+            var dm = document.getElementById(offset[2]);
+            dm.style.left = (event.clientX + parseInt(offset[0], 10)) + 'px';
+            dm.style.top = (event.clientY + parseInt(offset[1], 10)) + 'px';
+            event.preventDefault();
+            return false;
+        }
+
+        function drag_over(event) {
+            event.preventDefault();
+            return false;
+        }
+  </script>
    </head>
 <body>
 
@@ -235,18 +256,19 @@
         <div id="gardenbtndiv">
           <img id="gardenbtn" class="d-block w-100" src="assets/TT Images/gardenicon.gif">
         </div>
-        <div id="whiteout" class="beige">
+        <div id="whiteout" class="beige" ondragover="drag_over(event)" ondrop="drop(event)">
           <div id="maturity-div">
             <h3>Days to mature:</h3>
             <br>
           </div>
 
           <div id="gardendiv" class="beige">
-              <img id="gardenImg" class="d-block w-100" src="assets/TT Images/garden.jpg">
-              <img id="mushroom1" src="assets/TT Images/mushroom.png">
-              <img id="mushroom2" src="assets/TT Images/mushroom.png">
-              <img id="mushroom3" src="assets/TT Images/mushroom.png">
-              <img id="mushroom4" src="assets/TT Images/mushroom.png">
+              <img id="gardenImg" class="d-block w-100" src="assets/TT Images/farm.png">
+              <img draggable="true" ondragstart="drag_start(event)" id="mushroom1" src="assets/TT Images/mushroom.png">
+              <img draggable="true" ondragstart="drag_start(event)" id="mushroom2" src="assets/TT Images/mushroom.png">
+              <img draggable="true" ondragstart="drag_start(event)" id="mushroom3" src="assets/TT Images/mushroom.png">
+              <img draggable="true" ondragstart="drag_start(event)" id="mushroom4" src="assets/TT Images/mushroom.png">
+
             </div>
         </div>
       </div>
