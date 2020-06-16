@@ -1,27 +1,4 @@
 
-/* #rat {
-    transform: rotate(45deg);
-} */
-
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-  
-@keyframes rev-rotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(-360deg);
-    } 
-}
-
-
 body{
     background-color: rgb(252, 252, 252);
     background-image: url("../TT Images/wood.jpg");
@@ -215,6 +192,15 @@ h2:hover {
     left: 5%;
 }
 
+.plants {
+    transform: translateY(-50%);
+    animation-name: skew;
+    animation-timing-function: ease;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    /* animation-direction: alternate; */
+}
+
 #mushroom3 {
     height: 70px;
     position:fixed; 
@@ -329,4 +315,14 @@ input {
 
 h3.mealText{
     font-family: 'Caveat', cursive;
+}
+
+
+
+@keyframes skew {
+    /* 0% {transform: skewX(0deg) } */
+    25% {transform: skewX(10deg) translateY(-50%) }
+    /* 50% {transform: skewX(0deg) } */
+    75% {transform: skewX(-10deg) translateY(-50%) }
+    /* 100% {transform: skewX(0deg) } */
 }

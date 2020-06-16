@@ -2,56 +2,68 @@
 const garden = [
     {
         name: "parsley",
+        dayPlanted: 1589932800,
         daysToMature: 50,
         maturity:70,
         img: "assets/TT Images/parsley.png",
         positionTop: -70,
         positionLeft: 100,
-        height: 70
     },
     {
         name: "basil",
         daysToMature: 40,
+        dayPlanted: 1589932800,
         maturity:50,
         img: "assets/TT Images/basil.png",
         positionTop: -70,
         positionLeft: 200,
-        height: 70
     },
     {
         name: "rosemary",
         daysToMature: 100,
+        dayPlanted: 1589932800,
         maturity:180,
         img: "assets/TT Images/rosemary.png",
         positionTop: -70,
         positionLeft: 300,
-        height: 70
     },
     {
         name: "cilantro",
         daysToMature: 14,
+        dayPlanted: 1589932800,
         maturity:21,
         img: "assets/TT Images/cilantro.png",
         positionTop: -70,
         positionLeft: 400,
-        height: 70
     },
     {
         name: "pepper",
         daysToMature: 30,
+        dayPlanted: 1589932800,
         maturity:60,
         img: "assets/TT Images/pepper.png",
         positionTop: -70,
         positionLeft: 500,
-        height: 70
     }
 ]
 
-for (i=0; i<garden.length; i++) {
-    $("#maturity-div").append(`<p>${garden[i].name}: ${garden[i].daysToMature}/${garden[i].maturity}<p>`);
-    $("#gardendiv").append(`<img src="${garden[i].img}" style="position:fixed; top:${garden[i].positionTop}px; left:${garden[i].positionLeft}px; height:${garden[i].height}px">`);
+const grids = {
+    1:{
+
+    },
+    2:null,
+    
 }
 
+const date = new Date();
+console.log(date.valueOf());
+
+for (i=0; i<garden.length; i++) {
+    let daysToMature = Math.min(~~((date.valueOf()/1000 - garden[i].dayPlanted)/86400), garden[i].maturity);
+    let height = daysToMature/garden[i].maturity * 200;
+    $("#maturity-div").append(`<p>${garden[i].name}: ${daysToMature}/${garden[i].maturity}<p>`);
+    $("#gardendiv").append(`<img class="plants" src="${garden[i].img}" style="position:fixed; top:${garden[i].positionTop}px; left:${garden[i].positionLeft}px; height:${height}px">`);
+}
 
 
 $(document).ready(function() {
@@ -60,9 +72,6 @@ $(document).ready(function() {
         event.stopPropagation();
         $("#whiteout").attr("style", "display: block");
     }); 
-
-    
-
 
 
     // to close virtual garden
