@@ -27,7 +27,7 @@
             dm.style.left = (event.clientX + parseInt(offset[0], 10)) + 'px';
             dm.style.top = (event.clientY + parseInt(offset[1], 10)) + 'px';
             event.preventDefault();
-            console.log(event.clientX, event.clientY);
+            console.log(dm.style.left, dm.style.top);
             return false;
         }
 
@@ -260,18 +260,63 @@
           <div id="maturity-div">
             <h3>Days to mature:</h3>
             <br>
+            <div id="plantsDiv"></div>
+            <br>
+            <button id="addPlantBtn" type = "button" class = "btn btn-success urlBtn" data-toggle="modal" data-target ="plantsModal">Add a Plant</button>
+            <br>
           </div>
 
           <div id="gardendiv" class="beige">
               <img id="gardenImg" class="d-block w-100" src="assets/TT Images/farm.png">
               <img draggable="true" ondragstart="drag_start(event)" id="mushroom1" src="assets/TT Images/mushroom.png">
-              <img draggable="true" ondragstart="drag_start(event)" id="mushroom2" src="assets/TT Images/mushroom.png">
-              <img draggable="true" ondragstart="drag_start(event)" id="mushroom3" src="assets/TT Images/mushroom.png">
-              <img draggable="true" ondragstart="drag_start(event)" id="mushroom4" src="assets/TT Images/mushroom.png">
 
             </div>
         </div>
       </div>
+
+
+      <div class="row">
+        <div class="col-12">
+            <div class="modal fade" id="plantsModal" tabindex="-1" role="dialog" aria-labelledby="optionsModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Please add your plants</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                             <span aria-hidden="true">&times;</span>
+                             </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                              <div class="form-group">
+                                <label for="Day Chooser">Choose your plants</label>
+                                <select class="form-control" id="plantSelector">
+                                    <option value="rosemary">Rosemary</option>
+                                    <option value="cilantro">Cilantro</option>
+                                    <option value="basil">Basil</option>
+                                    <option value="parsley">Parsley</option>
+                                    <option value="pepper">Pepper</option>
+                                    <option value="tomato">Tomato</option>
+                                    <option value="mushroom">Mushroom</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="start">Date Planted:</label>
+                                <input type="date" id="plantDate" name="date-planted" value="2020-05-22">
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="modal-footer">
+                        <!-- <button type="button" class="btn btn-secondary btn-close" data-dismiss="modal" id="closeBtn">Close</button> -->
+                        <button type="button" class="btn btn-success btn-save" id="savePlantBtn">Add Plant</button>
+                    </div>
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </div>
 
       <!--Chef image - click to change placemats (background images)-->
       <div class="col-md-3">
@@ -369,7 +414,7 @@
      -->
       <script src = "assets/js/moment.min.js"></script>
       <script src="assets/js/TTscript.js"></script>
-      <script src="assets/js/Garden.js"></script>
+      <script src="assets/js/garden.js"></script>
       <script src="assets/js/index.js"></script>
       <script src="assets/js/nextMeal.js"></script>
       

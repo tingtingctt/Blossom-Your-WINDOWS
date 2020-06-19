@@ -5,8 +5,14 @@ module.exports = (sequelize, DataTypes)=> {
         dayPlanted: DataTypes.INTEGER,
         maturity: DataTypes.INTEGER,
         img: DataTypes.STRING,
-        positionTop: DataTypes.INTEGER,
-        positionLeft: DataTypes.INTEGER
+        positionTop: {
+          type: DataTypes.INTEGER,
+          defaultValue: 200
+        },
+        positionLeft: {
+          type: DataTypes.INTEGER,
+          defaultValue: 150
+        }
     });
 
 

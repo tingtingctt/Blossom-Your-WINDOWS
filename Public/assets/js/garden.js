@@ -1,4 +1,26 @@
 
+const user = {
+  id: 1,
+  name: "TT"
+}
+
+const maturities = {
+  parsley: 70,
+  basil: 50,
+  rosemary: 180,
+  cilantro: 21,
+  pepper: 60
+}
+
+const imgs = {
+  parsley: "assets/TT Images/parsley.png",
+  basil: "assets/TT Images/basil.png",
+  rosemary: "assets/TT Images/rosemary.png",
+  cilantro: "assets/TT Images/cilantro.png",
+  pepper: "assets/TT Images/pepper.png"
+}
+
+
 const garden = [
     {
         name: "parsley",
@@ -6,7 +28,7 @@ const garden = [
         daysToMature: 50,
         maturity:70,
         img: "assets/TT Images/parsley.png",
-        positionTop: 0,
+        positionTop: 200,
         positionLeft: 100,
     },
     {
@@ -15,16 +37,16 @@ const garden = [
         dayPlanted: 1589932800,
         maturity:50,
         img: "assets/TT Images/basil.png",
-        positionTop: 0,
+        positionTop: 200,
         positionLeft: 200,
     },
     {
         name: "rosemary",
-        daysToMature: 100,
+        daysToMature: 120,
         dayPlanted: 1589932800,
         maturity:180,
         img: "assets/TT Images/rosemary.png",
-        positionTop: 0,
+        positionTop: 200,
         positionLeft: 300,
     },
     {
@@ -33,7 +55,7 @@ const garden = [
         dayPlanted: 1589932800,
         maturity:21,
         img: "assets/TT Images/cilantro.png",
-        positionTop: 0,
+        positionTop: 200,
         positionLeft: 400,
     },
     {
@@ -42,7 +64,7 @@ const garden = [
         dayPlanted: 1589932800,
         maturity:60,
         img: "assets/TT Images/pepper.png",
-        positionTop: 0,
+        positionTop: 200,
         positionLeft: 500,
     }
 ]
@@ -59,9 +81,10 @@ const date = new Date();
 console.log(date.valueOf());
 $.get("/api/user_data").then(user=>console.log(user))
 for (i=0; i<garden.length; i++) {
+  // change this equation to database value
     let daysToMature = Math.min(~~((date.valueOf()/1000 - garden[i].dayPlanted)/86400), garden[i].maturity);
     let height = Math.max(daysToMature/garden[i].maturity * 200, 40);
-    $("#maturity-div").append(`<p>${garden[i].name}: ${daysToMature}/${garden[i].maturity}<p>`);
+    $("#plantsDiv").prepend(`<p>${garden[i].name}: ${daysToMature}/${garden[i].maturity}<p>`);
     $("#gardendiv").append(`<img id="plant${i}" draggable="true" ondragstart="drag_start(event)" class="plants" src="${garden[i].img}" style="position:fixed; top:${garden[i].positionTop}px; left:${garden[i].positionLeft}px; height:${height}px">`);
 }
 
@@ -69,25 +92,63 @@ for (i=0; i<garden.length; i++) {
 $(document).ready(function() {
     // to open virtual garden
     $("#gardenbtndiv").on("click", function(event){
-        event.stopPropagation();
+      event.stopPropagation();
         $("#whiteout").attr("style", "display: block");
     }); 
 
+    $("#addPlantBtn").on("click", function(event){
+      event.stopPropagation();
+      $('#plantsModal').modal({
+        show: true
+    });
+  }); 
 
-    function allowDrop(ev) {
-        ev.preventDefault();
-      }
-      
-      function drag(ev) {
-        ev.dataTransfer.setData("text", ev.target.id);
-      }
-      
-      function drop(ev) {
-        ev.preventDefault();
-        var data = ev.dataTransfer.getData("text");
-        ev.target.appendChild(document.getElementById(data));
-      }
-      
+  $(".plants").on("click", function(event){
+    event.stopPropagation();
+    $(this).animate({
+      height: '+=30px',
+      top: '-=30px', 
+      left: '-=15px', 
+    }, 500);
+  }); 
+
+  // name: DataTypes.STRING,
+  //       dayPlanted: DataTypes.INTEGER,
+  //       maturity: DataTypes.INTEGER,
+  //       img: DataTypes.STRING,
+  //       positionTop: {
+  //         type: DataTypes.INTEGER,
+  //         defaultValue: 200
+  //       },
+  //       positionLeft: {
+  //         type: DataTypes.INTEGER,
+  //         defaultValue: 150
+  //       }
+
+
+  $("#savePlantBtn").on("click", function(event){
+    event.stopPropagation();
+    let newPlant = $("#plantSelector").val();
+    let plantDate = $("#plantDate").val();
+    console.log((~~((date.valueOf()-Date.parse(plantDate))/86400000)));
+    $.post("/api/garden/new/" + user.id, {
+      name: newPlant,
+      dayPlanted: Date.parse(plantDate)/86400000,
+      maturity: maturities.newPlant,
+      img: imgs.newPlant,
+      positionTop: 200,
+      positionLeft: 100*garden.length
+    })
+      .then(function() {
+        window.location.replace("/index");
+        // If there's an error, log the error
+      })
+      .catch(function(err) {
+        console.log(err);
+      });
+  });
+
+
 
     // to close virtual garden
     $(document).click(function(event){

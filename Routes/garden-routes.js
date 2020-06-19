@@ -8,8 +8,8 @@ module.exports = function(app) {
     //         res.json(chefGetResults)
     //     })
     // })
-app.post("/api/garden/new/:uid", (req,res)=>{
-    db.Plant.create({...req.body, UserId: req.params.uid}).then(data=>console.log(data))
+    app.post("/api/garden/new/:uid", (req,res)=>{
+        db.Plant.create({...req.body, UserId: req.params.uid}).then(data=>console.log(data))
 })
 
     app.get("/api/garden/:uid", (req,res)=>{
