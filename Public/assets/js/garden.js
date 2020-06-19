@@ -57,7 +57,7 @@ const garden = [
 
 const date = new Date();
 console.log(date.valueOf());
-
+$.get("/api/user_data").then(user=>console.log(user))
 for (i=0; i<garden.length; i++) {
     let daysToMature = Math.min(~~((date.valueOf()/1000 - garden[i].dayPlanted)/86400), garden[i].maturity);
     let height = Math.max(daysToMature/garden[i].maturity * 200, 40);
