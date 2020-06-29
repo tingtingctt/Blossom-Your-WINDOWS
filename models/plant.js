@@ -2,7 +2,7 @@
 module.exports = (sequelize, DataTypes)=> {
         const Plant = sequelize.define("Plant", {
         name: DataTypes.STRING,
-        dayPlanted: DataTypes.INTEGER,
+        dayPlanted: DataTypes.BIGINT,
         maturity: DataTypes.INTEGER,
         img: DataTypes.STRING,
         positionTop: {

@@ -10,31 +10,25 @@
       <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai&display=swap" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+      <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+     -->
+      <script src = "assets/js/moment.min.js"></script>
+      <script src="assets/js/TTscript.js"></script>
+      <script src="assets/js/garden.js"></script>
+      <script src="assets/js/index.js"></script>
+      <script src="assets/js/nextMeal.js"></script>
       
       <title>Home Chef</title>
       <link rel="shortcut icon" type="image/png" href="assets/TT Images/food.jpeg">
 
       <script>
-        function drag_start(event) {
-            var style = window.getComputedStyle(event.target, null);
-            var str = (parseInt(style.getPropertyValue("left")) - event.clientX) + ',' + (parseInt(style.getPropertyValue("top")) - event.clientY) + ',' + event.target.id;
-            event.dataTransfer.setData("Text", str);
-        }
-
-        function drop(event) {
-            var offset = event.dataTransfer.getData("Text").split(',');
-            var dm = document.getElementById(offset[2]);
-            dm.style.left = (event.clientX + parseInt(offset[0], 10)) + 'px';
-            dm.style.top = (event.clientY + parseInt(offset[1], 10)) + 'px';
-            event.preventDefault();
-            console.log(dm.style.left, dm.style.top);
-            return false;
-        }
-
-        function drag_over(event) {
-            event.preventDefault();
-            return false;
-        }
+       
   </script>
    </head>
 <body>
@@ -268,7 +262,7 @@
 
           <div id="gardendiv" class="beige">
               <img id="gardenImg" class="d-block w-100" src="assets/TT Images/farm.png">
-              <img draggable="true" ondragstart="drag_start(event)" id="mushroom1" src="assets/TT Images/mushroom.png">
+              <!-- <img draggable="true" ondragstart="drag_start(event)" id="mushroom1" src="assets/TT Images/mushroom.png"> -->
 
             </div>
         </div>
@@ -404,19 +398,6 @@
   </div>
 
       <!-- Script section -->
-      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
-      <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-     -->
-      <script src = "assets/js/moment.min.js"></script>
-      <script src="assets/js/TTscript.js"></script>
-      <script src="assets/js/garden.js"></script>
-      <script src="assets/js/index.js"></script>
-      <script src="assets/js/nextMeal.js"></script>
-      
+    
 </body>
 </html>
