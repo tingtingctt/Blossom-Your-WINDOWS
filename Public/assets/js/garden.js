@@ -5,22 +5,22 @@ const user = {
 }
 
 const maturities = {
-  "parsley": 70,
-  "basil": 50,
-  "rosemary": 180,
-  "cilantro": 21,
-  "pepper": 60,
-  "tomato": 100,
+  "magnolia": 70,
+  "lily": 50,
+  "peony": 60,
+  "iris": 40,
+  "sunflower": 100,
+  "poppy": 30,
   "mushroom": 90
 }
 
 const imgs = {
-  parsley: "assets/TT Images/parsley.png",
-  basil: "assets/TT Images/basil.png",
-  rosemary: "assets/TT Images/rosemary.png",
-  cilantro: "assets/TT Images/cilantro.png",
-  pepper: "assets/TT Images/pepper.png",
-  tomato: "assets/TT Images/tomato1.png",
+  magnolia: "assets/TT Images/magnolia.png",
+  lily: "assets/TT Images/lily.png",
+  peony: "assets/TT Images/peony.png",
+  iris: "assets/TT Images/iris.png",
+  sunflower: "assets/TT Images/sunflower.png",
+  poppy: "assets/TT Images/poppy.png",
   mushroom: "assets/TT Images/mushroom.png"
 }
 
@@ -33,14 +33,14 @@ function drag_start(event) {
 
 function drop(event) {
   var offset = event.dataTransfer.getData("Text").split(',');
-  console.log(offset)
+  // console.log(offset)
   var dm = document.getElementById(offset[2]);
   dm.style.left = (event.clientX + parseInt(offset[0], 10)) + 'px';
   dm.style.top = (event.clientY + parseInt(offset[1], 10)) + 'px';
   event.preventDefault();
 
   
-  console.log(dm.style.left, dm.style.top);
+  // console.log(dm.style.left, dm.style.top);
   updatePosition(dm.style.left.replace("px", ''), dm.style.top.replace('px', ''), offset[2])
   return false;
 }
@@ -60,18 +60,27 @@ function updatePosition (left,top,id){
     }).then(data=> console.log(data))
   }
 
+
+  // rendering ---
 $(document).ready(function() {
 
   const date = new Date();
-console.log(date.valueOf());
-$.get("/api/user_data").then(user=>console.log(user))
+  // console.log(date.valueOf());
+
+  // $.get("/api/user_data").then(user=>console.log(user));
+
+  renderAll();
+
+function renderAll(){
   $.get('/api/all/garden').then(data=> {
     renderGarden(data)
   }).catch(err=>console.log(err))
+}
+
 
 function renderGarden(garden){
   for (i=0; i<garden.length; i++) {
-  console.log("days" + (date.valueOf() - garden[i].dayPlanted)/86400000);
+
     let daysToMature = Math.min(~~((date.valueOf() - garden[i].dayPlanted)/86400000), garden[i].maturity);
     let height = Math.max(daysToMature/garden[i].maturity * 200, 40);
     $("#plantsDiv").prepend(`<p>${garden[i].name}: ${daysToMature}/${garden[i].maturity}<p>`);
@@ -94,7 +103,7 @@ function renderGarden(garden){
   }); 
 
   $("#gardendiv").on("click", ".plants", function(event){
-    console.log("CLICKED TO GROW!")
+
     event.stopPropagation();
     $(this).animate({
       height: '+=30px',
@@ -103,17 +112,12 @@ function renderGarden(garden){
     }, 500);
   }); 
 
-  $("#plantsModal").on("click", function(event){
-    event.stopPropagation();
-  }); 
 
-  $("#savePlantBtn").on("click", function(event){
-    event.stopPropagation();
+  $(document).on("click", "#savePlantBtn", function(event){
+  // $("#savePlantBtn").on("click", function(event){
+
     let newPlant = $("#plantSelector").val();
     let plantDate = $("#plantDate").val();
-
-    console.log((~~((date.valueOf()-Date.parse(plantDate))/86400000)));
-    console.log(imgs.newPlant);
 
     $.post("/api/garden/new/" + user.id, 
     {
@@ -122,26 +126,27 @@ function renderGarden(garden){
       maturity: maturities[newPlant],
       img: imgs[newPlant],
       positionTop: 200,
-      positionLeft: 100
+      positionLeft: 500
     })
-      .then(function() {
-        window.location.replace("/index");
-        $('#plantsModal').modal({
-          show: false
-        });
-// add a get
+      .then(function(data) {
+
       })
       .catch(function(err) {
         console.log(err);
       });
   });
 
-
-
-    // to close virtual garden
-    $(document).click(function(event){
-      $("#whiteout").attr("style", "display: none");
+    $("#savePlantBtn").on("click", function(event){
+      $('#plant-added').attr("style", "color: red");
+        setTimeout(function(){
+          $('#plant-added').attr("style", "color: white");
+        }, 3000);
     });
+
+  $('#plantsModal').on('hidden.bs.modal', function () {
+    location.reload();
+   })
+
 
     $("#gardendiv").click(function(event){
       event.stopPropagation();
