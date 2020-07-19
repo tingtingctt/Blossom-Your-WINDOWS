@@ -20,7 +20,7 @@ module.exports = function(app) {
     app.get("/api/all/garden", (req,res)=>{
         console.log('getting all plants....')
         db.Plant.findAll().then(data=> res.json(data))
-    })
+    });
 
     
     app.put("/api/garden/location/:id", function(req, res) {
